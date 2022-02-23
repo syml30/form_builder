@@ -3,12 +3,24 @@ from form_builders.models import FormModel, FormGroupModel, QuestionModel, Answe
     CharModel, DateModel, FileModel, FloatModel, ImageModel, IntegerModel, JsonModel, TextModel, TimeModel, UrlModel
 
 
-class FormModelSerializer(ModelSerializer):
+class FormModelSerializer(ModelSerializer):  ### track
     class Meta:
         model = FormModel
         fields = '__all__'
 
 
+#################################################################
+
+class DetailFormGroupSerializer(ModelSerializer):  ### album
+    forms = FormModelSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = FormGroupModel
+        # fields = ['title', 'forms']
+        fields = '__all__'
+
+
+################################################################
 class FormGroupModelSerializer(ModelSerializer):
     class Meta:
         model = FormGroupModel
