@@ -6,7 +6,7 @@ from form_builders.models import FormModel, FormGroupModel, QuestionModel, Answe
 from form_builders.serializers import FormModelSerializer, FormGroupModelSerializer, QuestionModelSerializer, \
     AnswerTypModelSerializer, AnswerModelSerializer, BooleanModelSerializer, CharModelSerializer, DateModelSerializer, \
     FileModelSerializer, FloatModelSerializer, ImageModelSerializer, IntegerModelSerializer, JsonModelSerializer, \
-    TextModelSerializer, TimeModelSerializer, UrlModelSerializer
+    TextModelSerializer, TimeModelSerializer, UrlModelSerializer, DetailFormGroupSerializer
 
 
 ########### list s ###
@@ -99,3 +99,9 @@ class CreateTimeKind(CreateAPIView):
 class CreateUrlKind(CreateAPIView):
     serializer_class = UrlModelSerializer
     queryset = UrlModel.objects.all()
+
+
+class RetrieveForm(RetrieveAPIView):
+    lookup_field = 'pk'
+    serializer_class = DetailFormGroupSerializer
+    queryset = FormModel.objects.all()
