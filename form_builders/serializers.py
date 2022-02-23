@@ -11,7 +11,7 @@ class FormModelSerializer(ModelSerializer):
 
 #################################################################
 
-class DetailFormGroupSerializer(ModelSerializer): 
+class DetailFormGroupSerializer(ModelSerializer):
     forms = FormModelSerializer(many=True, read_only=True)
 
     class Meta:
