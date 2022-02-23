@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
+import logging
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -37,6 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'drf_yasg',
+
+
     'form_builders.apps.FormBuildersConfig',
 ]
 
@@ -123,3 +129,23 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+IMAGE_UPLOADER_SERVER = os.environ.get('IMAGE_UPLOADER_SERVER')
+IMAGE_UPLOADER_ADDRESS = f"{IMAGE_UPLOADER_SERVER}/{os.environ.get('IMAGE_UPLOADER_ADDRESS')}"
+IMAGE_UPLOADER_API_KEY = os.environ.get('IMAGE_UPLOADER_API_KEY')
+
+DOCUMENT_UPLOADER_SERVER = os.environ.get('DOCUMENT_UPLOADER_SERVER')
+DOCUMENT_UPLOADER_ADDRESS = f"{DOCUMENT_UPLOADER_SERVER}/{os.environ.get('DOCUMENT_UPLOADER_ADDRESS')}"
+DOCUMENT_UPLOADER_API_KEY = os.environ.get('DOCUMENT_UPLOADER_API_KEY')
+
+# Logger config
+logging.basicConfig(
+    level=logging.DEBUG,
+    # filename='.log',
+    filemode='w',
+    format='zi_doctor_log: %(levelname)s - %(asctime)s - module: %(module)s - line number: %(lineno)d  - message: '
+           '\"%(message)s\" '
+)
+
+
+
