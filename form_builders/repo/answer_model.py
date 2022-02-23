@@ -10,3 +10,6 @@ class Answer(models.Model):
         null=False,
 
     )
+
+    def __str__(self):
+        return str(self.typ)

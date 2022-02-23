@@ -28,4 +28,9 @@ class Boolean(models.Model):
         blank=False,
         null=False,
     )
-    extra_attribute = models.JSONField()
+    extra_attribute = models.JSONField(
+
+    )
+
+    def __str__(self):
+        return f"{self.value}-{self.answer}"

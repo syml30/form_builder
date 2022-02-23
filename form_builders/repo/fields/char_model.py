@@ -30,3 +30,6 @@ class Char(models.Model):
         null=False,
     )
     extra_attribute = models.JSONField()
+
+    def __str__(self):
+        return f"{self.value}-{self.answer}"

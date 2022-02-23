@@ -7,3 +7,6 @@ class AnswerTyp(models.Model):
         blank=False,
         null=False,
     )
+
+    def __str__(self):
+        return str(self.title)
