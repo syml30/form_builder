@@ -1,7 +1,7 @@
 from django.urls import path
 from form_builders.views import ListForm, ListFormGroup, CreateForm, CreateFormGroup, CreateQuestion, CreateAnswerTyp, \
     CreateAnswer, CreateBooleanKind, CreateCharKind, CreateDateKind, CreateFileKind, CreateFloatKind, CreateImageKind, \
-    CreateIntegerKind, CreateJsonKind, CreateTextKind, CreateTimeKind, CreateUrlKind
+    CreateIntegerKind, CreateJsonKind, CreateTextKind, CreateTimeKind, CreateUrlKind, RetrieveForm
 
 app_name = "form_builders"
 urlpatterns = [
@@ -23,5 +23,6 @@ urlpatterns = [
     path('create_text', CreateTextKind.as_view(), name='create_text'),
     path('create_time', CreateTimeKind.as_view(), name='create_time'),
     path('create_url', CreateUrlKind.as_view(), name='create_url'),
+    path('retrieve_form/<int:pk>', RetrieveForm.as_view(), name='retrieve_form'),
 
 ]
