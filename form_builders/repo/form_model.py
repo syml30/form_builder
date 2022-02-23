@@ -10,6 +10,7 @@ class Form(models.Model):
     )
     group = models.ForeignKey(
         to=FormGroupModel,
+        related_name="forms",
         on_delete=models.CASCADE,
         blank=False,
         null=False,
