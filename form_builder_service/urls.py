@@ -10,9 +10,9 @@ from drf_yasg import openapi
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Medical Record Service API",
+        title="Form Builder Service API",
         default_version='v0.01',
-        description="This service is used to medical record",
+        description="This service is used to Form Builder",
         contact=openapi.Contact(email="zidevgroup@gmail.com"),
         license=openapi.License(name="BSD License"),
     ),
