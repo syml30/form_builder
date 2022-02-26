@@ -15,3 +15,4 @@ description:
 - تنظیمات پنل ادمین
 - اضافه کردن swagger به پروژه
 - ایجاد url های مربوطه
+- ایجاد ای پی آی های ListForm,ListFormGroup,CreateForm, CreateFormGroup,CreateQuestion,CreateAnswerTyp,CreateAnswer,CreateBooleanKind,CreateCharKind,CreateDateKind,CreateFileKind,CreateFloatKind,CreateImageKind,CreateIntegerKind,CreateJsonKind,CreateTextKind,CreateTimeKind,CreateUrlKind,RetrieveForm
