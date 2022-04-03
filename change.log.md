@@ -4,7 +4,6 @@
 
 ### log 001
 
-date: 1400-12-03
 
 developed by: yasaman
 
